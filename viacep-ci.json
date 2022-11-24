@@ -15,7 +15,7 @@
 						"exec": [
 							"function consultaCep(){\r",
 							"    \r",
-							"    var cep = [\"13321030\",\"13321010\",\"13321050\",\"18550001\",\"as923hfs\"]\r",
+							"    var cep = [\"13321030\",\"13321010\",\"13321050\",\"18550001\"]\r",
 							"\r",
 							"    var randomItem = cep[Math.floor(Math.random() * cep.length)]\r",
 							"\r",
