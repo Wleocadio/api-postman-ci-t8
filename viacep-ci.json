@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "d3448f91-8969-4bc6-9bfa-3a401260b8e1",
+		"name": "Signup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24106546"
+	},
+	"item": [
+		{
+			"name": "CEP",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"function consultaCep(){\r",
+							"    \r",
+							"    var cep = [\"13321030\",\"13321010\",\"13321050\",\"18550001\",\"as923hfs\"]\r",
+							"\r",
+							"    var randomItem = cep[Math.floor(Math.random() * cep.length)]\r",
+							"\r",
+							"    return randomItem\r",
+							"}\r",
+							"\r",
+							"pm.variables.set(\"Cep\", consultaCep());"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/{{Cep}}/json/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{Cep}}",
+						"json",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
